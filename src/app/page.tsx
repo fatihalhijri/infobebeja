@@ -125,7 +125,7 @@ const page = () => {
                   Labolatory Kimia Yang Mendukung
                 </h5>
                 <p className="text-gray-600 mt-2 text-sm">
-                  Lorem ipsum dolor sit amet consectetur.
+                  Mendukung kemajuan ilmu pengetahuan dan industri.
                 </p>
               </div>
               <div className="flex flex-col">
@@ -136,7 +136,8 @@ const page = () => {
                   Testing Kimia Dengan komprehensif
                 </h5>
                 <p className="text-gray-600 mt-2 text-sm">
-                  Lorem ipsum dolor sit amet consectetur.
+                  Menyediakan layanan testing kimia yang komprehensif dan akurat
+                  
                 </p>
               </div>
             </div>
