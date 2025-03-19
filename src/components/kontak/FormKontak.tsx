@@ -19,7 +19,7 @@ const Contact = () => {
     pesan: "",
   });
   const handleClick = () => {
-    window.open("https://wa.me/6287878991905", "_blank");
+    window.open("https://wa.me/6285222173322", "_blank");
   };
 
   // Fungsi untuk menampilkan notifikasi saat berhasil

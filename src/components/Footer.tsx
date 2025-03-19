@@ -80,7 +80,7 @@ const Footer = () => {
                   +62 822-4972-5551 (Ilham/Admin)
                 </p>
                 <p className="lg:text-base text-black/70 ">
-                  +62 852-2217-3322 (Harfi/Marketing)
+                  +62 852-2217-3322 (GunHarfi/Marketing)
                 </p>
               </div>
             </div>

@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const handleClick = () => {
-    window.open("https://wa.me/6282249725551", "_blank");
+    window.open("https://wa.me/6285222173322", "_blank");
   };
   const [isOpen, setIsOpen] = useState(false);
   const [navSticky, setNavSticky] = useState(false);

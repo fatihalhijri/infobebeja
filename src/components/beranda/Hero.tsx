@@ -5,8 +5,9 @@ import { ArrowRight  } from "lucide-react";
 
 const Hero = () => {
   const handleClick = () => {
-    window.open("https://wa.me/6281381948105", "_blank");
+    window.open("https://wa.me/6285222173322", "_blank");
   };
+  
 
   return (
     <div

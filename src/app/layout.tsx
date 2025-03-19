@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "PT. Berlian Benzena Jaya (BEBEJA) didirikan pada tahun 2022,dengan tujuan memberikan nilai tambah kepada pelanggankami dengan menyediakan bahan baku kimia yang berkualitastinggi dan juga layanan purna jual yang sempurna",
   keywords:
-    "PT BEBEJA, PT Berlian Benzena Jaya, Bebeja,Kimia Terbaik, PT Berlian Benzena Jaya, Perusahaan Kimia, Perusahaan Di Grand Wisata, Kimia, Penjualan Kimia ",
+    "PT BEBEJA, PT Berlian Benzena Jaya, Bebeja,Kimia Terbaik, PT Berlian Benzena Jaya, Perusahaan Kimia, Perusahaan Di Grand Wisata, Kimia, Penjualan Kimia , infobebeja, perusahaan kimia terbaik, pt infobebeja",
   openGraph: {
     title: "PT. Berlian Benzena Jaya",
     description:
