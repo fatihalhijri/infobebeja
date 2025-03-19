@@ -1,103 +1,329 @@
+"use client";
+import Hero from "@/components/beranda/Hero";
+import Hero1 from "@/components/Hero";
+import LiniBisnis from "@/components/helper/LiniBisnis";
+import { ArrowRight, Briefcase, Clock, TestTube } from "lucide-react";
+import Link from "next/link";
+import React, { useRef } from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+const products = [
+  { img: "/kimia/kimia-1.jpg", title: "Bahan Bahan Kimia" },
+  { img: "/kimia/kimia-2.webp", title: "Hydrolic Acid" },
+  { img: "/kimia/kimia-3.webp", title: "Bahan Kimia Labolatoriom" },
+  { img: "/kimia/kimia-4.jpg", title: "Asam Klorida" },
+];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+const coatingTypes = [
+  "Automotive & Spare Part",
+  "Road Marking",
+  "Flooring",
+  "Packaging",
+  "Construction",
+  "Marine",
+  "Industrial Coating",
+  "Decorative",
+];
+
+const services = [
+  "Protective Coating (Cat untuk Pipanisasi dan Tank)",
+  "Epoxy Flooring (Cat Lantai)",
+  "Heat Resistant Paint (Cat Tahan Panas 200 – 600 ͦC)",
+  "Marine Coating (Cat Kapal – Topside s/d Bottom)",
+];
+
+const page = () => {
+  return (
+    <div>
+      <Hero />
+      <div className="lg:py-10 py-10 px-6 md:px-20 lg:px-36 relative">
+        <section
+          className="w-full xl:max-w-5xl lg:max-w-3xl lg:bg-white lg:shadow-xl rounded-xl py-8 px-6 mx-auto 
+          lg:absolute lg:-bottom-10 lg:left-1/2 lg:transform lg:-translate-x-1/2"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+            {/* Item 1 */}
+            <div className="flex flex-col items-center bg-white shadow-md lg:bg-none lg:shadow-none py-5 lg:py-0 px-5 lg:px-none rounded-2xl md:border-r-2 md:border-l-2 lg:border-gray-300 border-gray-200 ">
+              <TestTube className="h-12 w-12 text-blue-500 mb-4" />
+              <h3 className="text-lg font-semibold text-gray-800">
+                Laboratory Chemicals
+              </h3>
+              <p className="text-gray-600 mt-2 text-sm">
+                Layanan Kimia terbaik untuk kebutuhan Anda.
+              </p>
+            </div>
+
+            {/* Item 2 */}
+            <div className="flex flex-col items-center bg-white shadow-md lg:bg-none lg:shadow-none py-5 lg:py-0 px-5 lg:px-none rounded-2xl md:border-r-2 md:border-l-2 lg:border-gray-300 border-gray-200  ">
+              <Briefcase className="h-12 w-12 text-blue-500 mb-4" />
+              <h3 className="text-lg font-semibold text-gray-800">
+                Professional Area
+              </h3>
+              <p className="text-gray-600 mt-2 text-sm">
+                Tim ahli dengan pengalaman di berbagai industri.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center bg-white shadow-md lg:bg-none lg:shadow-none py-5 lg:py-0 px-5 lg:px-none rounded-2xl md:border-r-2 md:border-l-2 lg:border-gray-300 border-gray-200  ">
+              <Clock className="h-12 w-12 text-blue-500 mb-4" />
+              <h3 className="text-lg font-semibold text-gray-800">
+                Opening Hours
+              </h3>
+              <p className="text-gray-600 mt-2 text-sm">
+                Senin - Jumat: 08:00 - 18:00, Sabtu: 09:00 - 14:00.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      {/* <div className='h-[80vh] bg-red-200'></div> */}
+
+      <section className="py-12 px-6 md:px-20 lg:px-36  ">
+        <div className="grid lg:grid-cols-2 gap-8 items-center py-5 lg:h-[70vh] h-full">
+          <div className="relative flex items-center justify-center w-full max-w-md mx-auto lg:max-w-full">
+            <div className="relative overflow-hidden rounded-xl shadow-lg w-[90%] lg:w-[60vh]">
+              <Image
+                src="/foto-hero-2.jpg"
+                alt="Speaker"
+                width={600}
+                height={600}
+                className="w-full rounded-xl "
+              />
+            </div>
+
+            <div className="absolute bottom-[-20px] left-[-5px] md:bottom-[-30px] xl:left-[-20px] lg:left-[-14px] md:left-[10px] w-3/6  xl:w-2/4 transform rotate-5">
+              <Image
+                width={600}
+                height={600}
+                src="/bebeja-poto.webp"
+                alt="Workshop"
+                className="rounded-lg shadow-xl border-4 border-white "
+              />
+            </div>
+          </div>
+
+          <div>
+            <h5 className="relative  inline-block xl:text-2xl lg:text-xl md:text-lg text-lg  text-black/80 font-semibold ">
+              Tentang Perusahaan
+              <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-300 opacity-50 "></span>
+            </h5>
+            <h2 className="lg:text-3xl md:text-2xl text-2xl lg:font-semibold sm:font-medium">
+              Solusi Kimia Terpercaya untuk Industri Anda
+            </h2>
+            <p className="text-gray-700 mt-4">
+              Produk kimia kami dirancang untuk membantu Anda meningkatkan
+              efisiensi, mengurangi biaya, dan meningkatkan kualitas produk.
+            </p>
+            <div className="flex md:flex-row flex-col pt-3 gap-5">
+              <div className="flex flex-col">
+                <h3 className="xl:text-2xl lg:text-xl md:text-lg text-lg  text-blue-400 font-semibold ">
+                  01.
+                </h3>
+                <h5 className="text-lg font-semibold text-gray-800">
+                  Labolatory Kimia Yang Mendukung
+                </h5>
+                <p className="text-gray-600 mt-2 text-sm">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <h3 className="xl:text-2xl lg:text-xl md:text-lg text-lg  text-blue-400 font-semibold ">
+                  02.
+                </h3>
+                <h5 className="text-lg font-semibold text-gray-800">
+                  Testing Kimia Dengan komprehensif
+                </h5>
+                <p className="text-gray-600 mt-2 text-sm">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+              </div>
+            </div>
+
+            <button className="mt-6 bg-blue-400 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-3">
+              <Link href={"/tentang"}>Lihat Lebih</Link>
+              <ArrowRight className="h-6 w-6 " />
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+      <section className="py-12 px-6 md:px-20 lg:px-36 bg-gray-100">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-5 lg:h-[70vh] h-full">
+          {/* BAGIAN TEKS */}
+          <div className="flex flex-col items-start w-full lg:w-1/2">
+            <h5 className="relative inline-block xl:text-2xl lg:text-xl md:text-lg text-lg text-black/80 font-semibold">
+              Laboratory Chemicals
+              <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-300 opacity-50"></span>
+            </h5>
+            <h2 className="lg:text-3xl md:text-2xl text-2xl lg:font-semibold sm:font-medium pt-2">
+              Mitra Terpercaya dalam Penyediaan Produk Kimia
+            </h2>
+            <p className="text-gray-700 mt-4">
+              Kami menyediakan Bahan kimia laboratorium diantaranya bahan kimia
+              yang digunakan dalam eksperimen dan pengujian di laboratorium
+              dengan Tingkat kemurnian yang tinggi. Terdiri dari Pro Anylize
+              (PA), Analar (AR), Guaranted Reagent (GR) Chemical Pure (CP) dll.
+            </p>
+            <button className="mt-6 bg-blue-400 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-3">
+              <Link href={"/tentang"}>Lihat Lainnya</Link>
+              <ArrowRight className="h-6 w-6 " />
+            </button>
+          </div>
+
+          <div className="w-full lg:w-1/2 mt-8 lg:mt-0 relative">
+            {/* Efek Gradasi Hitam di Kanan & Kiri */}
+            <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r lg:from-black/30 from-black/20 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l lg:from-black/30 from-black/20 to-transparent z-10 pointer-events-none"></div>
+
+            <Carousel
+              showArrows={true} // Tampilkan panah navigasi
+              autoPlay={true} // Auto-looping
+              infiniteLoop={true} // Loop terus-menerus
+              showThumbs={false} // Hilangkan thumbnail kecil
+              showStatus={false} // Hilangkan status jumlah slide
+              interval={3000} // Perpindahan slide setiap 3 detik
+              transitionTime={500} // Animasi perpindahan 0.5 detik
+              swipeable={true} // Bisa di-swipe di mobile
+              emulateTouch={true} // Swipe lebih natural
+              centerMode={true} // Mode tengah
+              centerSlidePercentage={50} // Setengah dari layar
+            >
+              {products.map((product, index) => (
+                <div key={index} className="px-2">
+                  <LiniBisnis img={product.img} title={product.title} />
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 px-6 md:px-20 lg:px-36 h-full">
+        <div className="text-center mb-10">
+          <div className=" flex flex-col items-center justify-center ">
+            <h3 className="lg:text-3xl md:text-2xl text-2xl uppercase lg:font-semibold sm:font-medium  ">
+              Lini Bisnis Industri
+            </h3>
+            <hr className="border text-blue-400 rounded-full w-20 border-dashed " />
+          </div>
+          <p className="text-gray-600 mt-2">
+            Lini bisnis kami mencakup penyediaan bahan baku kimia, pengolahan
+            limbah, dan jasa konsultasi industri.
+          </p>
+        </div>
+        <div className="grid xl:grid-cols-3 sm:grid-cols-2  w-full gap-4">
+          <LiniBisnis img="/bisnis/hero-1.png" title="Oil & Gas"></LiniBisnis>
+          <LiniBisnis
+            img="/bisnis/hero-2.png"
+            title="Waste & Treatment"
+          ></LiniBisnis>
+          <LiniBisnis
+            img="/bisnis/hero-3.png"
+            title="Food & Beverage"
+          ></LiniBisnis>
+
+          <LiniBisnis
+            img="/bisnis/hero-4.png"
+            title="Industrial Chemical"
+          ></LiniBisnis>
+          <LiniBisnis
+            img="/bisnis/hero-5.png"
+            title="Labolatory Chemicals"
+          ></LiniBisnis>
+          <LiniBisnis
+            img="/bisnis/hero-6.png"
+            title="Paint & Coating Application"
+          ></LiniBisnis>
+        </div>
+      </section>
+      <section className="py-12 px-6 md:px-20 lg:px-36">
+        <section className="">
+          {/* JUDUL */}
+          <div className="text-center mb-10">
+            <div className=" flex flex-col items-center justify-center ">
+              <h3 className="lg:text-3xl md:text-2xl text-2xl uppercase lg:font-semibold sm:font-medium  ">
+                Kontak
+              </h3>
+              <hr className="border text-blue-400 rounded-full w-20 border-dashed " />
+            </div>
+            <p className="text-gray-600 mt-2">
+              Solusi Terbaik untuk Kebutuhan Coating dan Pengecatan Anda
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-12">
+            {/* BAGIAN COATING */}
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              {/* <h3 className="bg-gray-800 text-white text-xl font-semibold py-3 px-6">
+                Jenis Coating
+              </h3> */}
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="bg-gray-800 text-white">
+                      <th className="py-3 px-6 text-left w-16">No</th>
+                      <th className="py-3 px-6 text-left">Jenis Coating</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {coatingTypes.map((item, index) => (
+                      <tr
+                        key={index}
+                        className="border-b hover:bg-gray-100 transition"
+                      >
+                        <td className="py-3 px-6 text-gray-700">{index + 1}</td>
+                        <td className="py-3 px-6 text-gray-900 font-medium">
+                          {item}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* BAGIAN SERVICE */}
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden w-full">
+              {/* <h3 className="bg-gray-800 text-white text-xl font-semibold py-3 px-6">
+                Jasa Pengecatan
+              </h3> */}
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="bg-gray-800 text-white">
+                      <th className="py-3 px-6 text-left w-16">No</th>
+                      <th className="py-3 px-6 text-left">Jasa Pengecatan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {services.map((item, index) => (
+                      <tr
+                        key={index}
+                        className="border-b hover:bg-gray-100 transition"
+                      >
+                        <td className="py-3 px-6 text-gray-700">{index + 1}</td>
+                        <td className="py-3 px-6 text-gray-900 font-medium">
+                          {item}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section className="pt-10">
+        <Hero1
+          img="/img-bebeja-2.jpg"
+          judul="Berlian Benzena Jaya Is a One Stop Chemical Company 
+        Providing Commodities and high-tech Performance Specialty Chemicals for Various Industries"
+          tinggi="lg:h-[60vh] h-[40vh]"
+        />
+      </section>
     </div>
   );
-}
+};
+
+export default page;

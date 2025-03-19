@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior:smooth;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .navbar__link:hover {
+    color: #51a2ff;
+    transition: all 0.4s;
+  }
+  .navbar__link::after {
+    position: absolute;
+    content: "";
+    background-color: #51a2ff;
+    height: 3px;
+    width: 100%;
+    bottom: -5px; 
+    left: 0;
+    scale: 0;
+    transform-origin: left;
+    transition: all 0.4s;
+  }
+  .navbar__link:hover::after {
+    scale: 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.loading {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  animation: s4 4s infinite;
 }
+.loading::before,
+.loading::after {
+  content: "";
+  grid-area: 1/1;
+  border: 16px solid;
+  border-radius: 50%;
+  border-color: #ffc639 #ffc639 #0000 #0000;
+  mix-blend-mode: darken;
+  animation: s4 1s infinite linear;
+}
+.loading::after {
+  border-color: #0000 #0000 #e4e4ed #e4e4ed;
+  animation-direction: reverse;
+}
+
+@keyframes s4 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+ 
