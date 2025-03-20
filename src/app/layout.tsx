@@ -5,6 +5,7 @@ import BefNavbar from "@/components/BefNavbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/helper/ScrollTop";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "600"] });
 
@@ -32,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Tambahkan Google Analytics */}
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-R42L5XEB26"
           strategy="afterInteractive"
         />
@@ -45,7 +46,9 @@ export default function RootLayout({
               page_path: window.location.pathname,
             });
           `}
-        </Script>
+        </Script> */}
+
+        <Analytics />
       </head>
       <body className={poppins.className}>
         <Navbar />
@@ -57,4 +60,3 @@ export default function RootLayout({
     </html>
   );
 }
-
