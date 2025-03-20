@@ -1,5 +1,5 @@
 "use client";
-import { Phone} from "lucide-react";
+import { Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -67,13 +67,14 @@ const BefNavbar = () => {
           <div
             className={`flex items-center  h-[10vh] justify-between gap-5 z-[1050] px-6 md:px-20 lg:px-36 `}
           >
-
-            <Image
-              alt="bebeja"
-              src={"/bebeja.webp"}
-              width={180}
-              height={180}
-            ></Image>
+            <div className="overflow-hidden lg:w-full w-[20vh]">
+              <Image
+                alt="bebeja"
+                src={"/bebeja.webp"}
+                width={180}
+                height={180}
+              ></Image>
+            </div>
             {/* <Image alt="bebeja" src={'/bebeja-no.png'} width={30} height={30}></Image> */}
             <div id="navbar-menu" className={`hidden lg:block `}>
               <div className="">
@@ -118,7 +119,7 @@ const BefNavbar = () => {
               className="lg:flex hidden bg-blue-400 xl:text-base text-sm text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 items-center gap-3"
             >
               <Phone stroke="none" fill="white" className="h-5 w-5 " />
-              Hubungi 
+              Hubungi
             </button>
             <div className=" flex items-center lg:hidden md:flex">
               <button

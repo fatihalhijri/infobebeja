@@ -75,12 +75,14 @@ const Navbar = () => {
           <div
             className={`flex items-center  h-[10vh] justify-between  gap-5  z-[10006] px-6 md:px-20 lg:px-36 `}
           >
-            <Image
-              alt="bebeja"
-              src={"/bebeja.webp"}
-              width={180}
-              height={180}
-            ></Image>
+            <div className="overflow-hidden lg:w-full w-[20vh]">
+              <Image
+                alt="bebeja"
+                src={"/bebeja.webp"}
+                width={180}
+                height={180}
+              ></Image>
+            </div>
             <div id="navbar-menu" className={`hidden lg:block `}>
               <div className="">
                 <div className="flex w-fit gap-10 mx-auto font-medium py-4 text-blackish">

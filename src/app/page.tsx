@@ -40,7 +40,7 @@ const page = () => {
       <Hero />
       <div className="lg:py-10 py-10 px-6 md:px-20 lg:px-36 relative">
         <section
-          className="w-full xl:max-w-5xl lg:max-w-3xl lg:bg-white lg:shadow-xl rounded-xl py-8 px-6 mx-auto 
+          className="w-full xl:max-w-5xl lg:max-w-3xl lg:bg-white lg:shadow-xl rounded-xl py-8 md:px-6 mx-auto 
           lg:absolute lg:-bottom-10 lg:left-1/2 lg:transform lg:-translate-x-1/2"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
@@ -97,7 +97,7 @@ const page = () => {
               <Image
                 width={600}
                 height={600}
-                src="/bebeja-poto.webp"
+                src="/foto-hero-1.jpg"
                 alt="Workshop"
                 className="rounded-lg shadow-xl border-4 border-white "
               />

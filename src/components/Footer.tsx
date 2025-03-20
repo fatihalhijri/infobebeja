@@ -9,7 +9,7 @@ const Footer = () => {
       <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2rem] border-b-[1.4px] pb-5 border-gray-600 border-opacity-40 ">
         <div>
           
-          <div>
+          <div className="overflow-hidden lg:w-full w-[25vh]">
             <Image
               alt="img"
               src={"/bebeja.webp"}
@@ -17,6 +17,7 @@ const Footer = () => {
               height={240}
             ></Image>
           </div>
+          
           <h1 className="text-base mt-[0.5rem] font-normal text-black/70 opacity-70  ">
             perusahaan yang bergerak di bidang jasa penjualan kimia. Selalu siap
             untuk Produk baru dan kolaborasi yang menantang

@@ -1,13 +1,12 @@
 "use client";
 import React from "react";
 import TypeWrite from "../helper/TypeWrite";
-import { ArrowRight  } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   const handleClick = () => {
     window.open("https://wa.me/6285222173322", "_blank");
   };
-  
 
   return (
     <div
@@ -27,16 +26,23 @@ const Hero = () => {
         <TypeWrite />
 
         <p className="mt-4 text-sm lg:text-base xl:text-lg font-medium text-white">
-          Kami menghadirkan solusi terbaik untuk kebutuhan kimia Anda. Temukan inovasi dan teknologi terbaru bersama kami.
+          Kami menghadirkan solusi terbaik untuk kebutuhan kimia Anda. Temukan
+          inovasi dan teknologi terbaru bersama kami.
         </p>
 
-        <button
+        {/* <button
           onClick={handleClick}
           className="mt-6 px-4 lg:px-6   py-2  rounded-md  bg-blue-500 hover:bg-blue-700 transition-all duration-300 flex justify-center items-center w-full sm:w-auto"
         >
           <p className="text-white text-sm sm:text-lg flex items-center gap-3">
             Hubungi Sekarang
             <ArrowRight className="h-6 w-6 " />
+          </p>
+        </button> */}
+        <button onClick={handleClick} className="mt-6 bg-blue-400 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-3">
+          <p className="text-white text-sm sm:text-lg flex items-center gap-3">
+            Hubungi Kami
+            <ArrowRight className="md:h-6 md:w-6 " />
           </p>
         </button>
       </div>
