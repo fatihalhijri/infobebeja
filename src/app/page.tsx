@@ -8,7 +8,7 @@ import React, { useRef } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Image from "next/image";
-import ProductCard from "@/components/helper/produk";
+import ProductCard from "@/components/helper/Produk";
 
 const products = [
   { img: "/kimia/kimia-1.jpg", title: "Bahan Bahan Kimia" },
@@ -187,10 +187,9 @@ const page = () => {
               showStatus={false} // Hilangkan status jumlah slide
               interval={3000} // Perpindahan slide setiap 3 detik
               transitionTime={500} // Animasi perpindahan 0.5 detik
-              swipeable={false} // Bisa di-swipe di mobile
-              emulateTouch={true} // Swipe lebih natural
               centerMode={true} // Mode tengah
               centerSlidePercentage={50} // Setengah dari layar
+              swipeable={false}
               >
               {products.map((product, index) => (
                 <div key={index} className="px-2 pb-10">
@@ -209,9 +208,8 @@ const page = () => {
               showStatus={false} // Hilangkan status jumlah slide
               interval={3000} // Perpindahan slide setiap 3 detik
               transitionTime={500} // Animasi perpindahan 0.5 detik
-              swipeable={false} // Bisa di-swipe di mobile
-              emulateTouch={true} // Swipe lebih natural
               centerMode={true} // Mode tengah
+              
               
               >
               {products.map((product, index) => (

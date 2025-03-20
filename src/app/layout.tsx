@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import BefNavbar from "@/components/BefNavbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/helper/ScrollTop";
+import Script from "next/script";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "600"] });
 
@@ -29,7 +30,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
+      <head>
+        {/* Tambahkan Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-R42L5XEB26"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-R42L5XEB26', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+      </head>
       <body className={poppins.className}>
         <Navbar />
         <BefNavbar />
@@ -40,3 +57,4 @@ export default function RootLayout({
     </html>
   );
 }
+
