@@ -8,11 +8,12 @@ import React, { useRef } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Image from "next/image";
+import ProductCard from "@/components/helper/produk";
 
 const products = [
   { img: "/kimia/kimia-1.jpg", title: "Bahan Bahan Kimia" },
   { img: "/kimia/kimia-2.webp", title: "Hydrolic Acid" },
-  { img: "/kimia/kimia-3.webp", title: "Bahan Kimia Labolatoriom" },
+  { img: "/kimia/kimia-3.webp", title: "Bahan Bahan Industri" },
   { img: "/kimia/kimia-4.jpg", title: "Asam Klorida" },
 ];
 
@@ -176,6 +177,7 @@ const page = () => {
             {/* Efek Gradasi Hitam di Kanan & Kiri */}
             <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r lg:from-black/30 from-black/20 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l lg:from-black/30 from-black/20 to-transparent z-10 pointer-events-none"></div>
+            <div className="hidden md:block">
 
             <Carousel
               showArrows={true} // Tampilkan panah navigasi
@@ -185,17 +187,40 @@ const page = () => {
               showStatus={false} // Hilangkan status jumlah slide
               interval={3000} // Perpindahan slide setiap 3 detik
               transitionTime={500} // Animasi perpindahan 0.5 detik
-              swipeable={true} // Bisa di-swipe di mobile
+              swipeable={false} // Bisa di-swipe di mobile
               emulateTouch={true} // Swipe lebih natural
               centerMode={true} // Mode tengah
               centerSlidePercentage={50} // Setengah dari layar
-            >
+              >
               {products.map((product, index) => (
-                <div key={index} className="px-2">
-                  <LiniBisnis img={product.img} title={product.title} />
+                <div key={index} className="px-2 pb-10">
+                  <ProductCard img={product.img} title={product.title} />
                 </div>
               ))}
             </Carousel>
+              </div>
+            <div className="block md:hidden">
+
+            <Carousel
+              showArrows={true} // Tampilkan panah navigasi
+              autoPlay={true} // Auto-looping
+              infiniteLoop={true} // Loop terus-menerus
+              showThumbs={false} // Hilangkan thumbnail kecil
+              showStatus={false} // Hilangkan status jumlah slide
+              interval={3000} // Perpindahan slide setiap 3 detik
+              transitionTime={500} // Animasi perpindahan 0.5 detik
+              swipeable={false} // Bisa di-swipe di mobile
+              emulateTouch={true} // Swipe lebih natural
+              centerMode={true} // Mode tengah
+              
+              >
+              {products.map((product, index) => (
+                <div key={index} className="px-2 pb-10">
+                  <ProductCard img={product.img} title={product.title} />
+                </div>
+              ))}
+            </Carousel>
+              </div>
           </div>
         </div>
       </section>
