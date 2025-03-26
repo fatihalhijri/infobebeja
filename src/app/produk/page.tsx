@@ -90,7 +90,7 @@ const ItemChemical = [
 const page = () => {
   return (
     <div>
-      <Hero img="/kimia-1.jpg" judul="Produk" subJudul="produk" posisi="30%" />
+      <Hero img="/kimia-1.webp" judul="Produk" subJudul="produk" posisi="30%" />
       <div className="h-full lg:py-10 py-10 px-6 md:px-20 lg:px-36">
         <div className="pb-6 flex flex-col items-center justify-center ">
           <h3 className="lg:text-3xl md:text-2xl text-2xl uppercase lg:font-semibold font-medium text-center ">

@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <div
       className="relative h-[80vh] flex justify-start items-center px-6 md:px-20 lg:px-36 bg-cover bg-center"
-      style={{ backgroundImage: `url(/kimia-1.jpg)` }}
+      style={{ backgroundImage: `url(/kimia-1.webp)` }}
     >
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative text-white lg:w-2/3">

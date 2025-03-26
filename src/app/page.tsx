@@ -13,10 +13,10 @@ import ParallaxSection from "@/components/Parallax1";
 import { motion } from "framer-motion";
 
 const products = [
-  { img: "/kimia/kimia-1.jpg", title: "Bahan Bahan Kimia" },
+  { img: "/kimia/kimia-1.webp", title: "Bahan Bahan Kimia" },
   { img: "/kimia/kimia-2.webp", title: "Hydrolic Acid" },
   { img: "/kimia/kimia-3.webp", title: "Bahan Bahan Industri" },
-  { img: "/kimia/kimia-4.jpg", title: "Asam Klorida" },
+  { img: "/kimia/kimia-4.webp", title: "Asam Klorida" },
 ];
 
 const coatingTypes = [
@@ -98,7 +98,7 @@ const page = () => {
           <div className="relative flex items-center justify-center w-full max-w-md mx-auto lg:max-w-full">
             <div className="relative overflow-hidden rounded-xl shadow-lg w-[90%] lg:w-[60vh]">
               <Image
-                src="/foto-hero-2.jpg"
+                src="/foto-hero-2.webp"
                 alt="Speaker"
                 width={600}
                 height={600}
@@ -110,7 +110,7 @@ const page = () => {
               <Image
                 width={600}
                 height={600}
-                src="/foto-hero-1.jpg"
+                src="/foto-hero-1.webp"
                 alt="Workshop"
                 className="rounded-lg shadow-xl border-4 border-white "
               />
@@ -247,26 +247,26 @@ const page = () => {
           </p>
         </div>
         <div className="grid xl:grid-cols-3 sm:grid-cols-2  w-full gap-4">
-          <LiniBisnis img="/bisnis/hero-1.png" title="Oil & Gas"></LiniBisnis>
+          <LiniBisnis img="/bisnis/hero-1.webp" title="Oil & Gas"></LiniBisnis>
           <LiniBisnis
-            img="/bisnis/hero-2.png"
+            img="/bisnis/hero-2.webp"
             title="Waste & Treatment"
           ></LiniBisnis>
           <LiniBisnis
-            img="/bisnis/hero-3.png"
+            img="/bisnis/hero-3.webp"
             title="Food & Beverage"
           ></LiniBisnis>
 
           <LiniBisnis
-            img="/bisnis/hero-4.png"
+            img="/bisnis/hero-4.webp"
             title="Industrial Chemical"
           ></LiniBisnis>
           <LiniBisnis
-            img="/bisnis/hero-5.png"
+            img="/bisnis/hero-5.webp"
             title="Labolatory Chemicals"
           ></LiniBisnis>
           <LiniBisnis
-            img="/bisnis/hero-6.png"
+            img="/bisnis/hero-6.webp"
             title="Paint & Coating Application"
           ></LiniBisnis>
         </div>
@@ -351,7 +351,7 @@ const page = () => {
       </section>
       <section className="pt-10">
         <Hero1
-          img="/img-bebeja-2.jpg"
+          img="/img-bebeja-2.webp"
           judul="Berlian Benzena Jaya Is a One Stop Chemical Company 
         Providing Commodities and high-tech Performance Specialty Chemicals for Various Industries"
           tinggi="lg:h-[60vh] h-[40vh]"

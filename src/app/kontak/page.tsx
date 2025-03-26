@@ -74,7 +74,7 @@ const page = () => {
     <div className="  ">
       <Toaster position="top-center" reverseOrder={false} />
       <Hero
-        img="/img-bebeja-1.jpg"
+        img="/img-bebeja-1.webp"
         judul="Kontak"
         subJudul="kontak"
         posisi="20%"

@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <div>
       <Hero
-        img="/img-bebeja-2.jpg"
+        img="/img-bebeja-2.webp"
         judul="Tentang Kami"
         subJudul="tentang"
         posisi="30%"
@@ -59,7 +59,7 @@ const Page = () => {
             <div className="w-full xl:h-[60vh]  md:h-[50vh] h-[40vh] overflow-hidden rounded-lg shadow-lg">
               <Image
                 alt="Kantor BEBEJA"
-                src="/kantor-bebeja.jpg"
+                src="/kantor-bebeja.webp"
                 className="w-full h-full object-cover"
                 width={500}
                 height={700} // Portrait Ratio
@@ -144,7 +144,7 @@ const Page = () => {
             <div className="w-full xl:h-[60vh] md:h-[50vh] overflow-hidden rounded-lg shadow-lg">
               <Image
                 alt="BEBEJA Team"
-                src="/foto-hero-1.jpg"
+                src="/foto-hero-1.webp"
                 className="w-full h-full object-cover"
                 width={700}
                 height={700} // Landscape Ratio
