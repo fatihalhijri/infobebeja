@@ -38,9 +38,9 @@ const Footer = () => {
             </p>
           </Link>
 
-          <Link href="/kategori" passHref>
+          <Link href="/produk" passHref>
             <p className="text-base text-black/70 opacity-80 mb-[1rem] cursor-pointer hover:text-primary ">
-              Kategori
+              Produk
             </p>
           </Link>
           <Link href="/kontak" passHref>

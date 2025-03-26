@@ -39,7 +39,7 @@ const Hero = () => {
             <ArrowRight className="h-6 w-6 " />
           </p>
         </button> */}
-        <button onClick={handleClick} className="mt-6 bg-blue-400 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-3">
+        <button onClick={handleClick} className="mt-6 bg-blue-400 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-3 cursor-pointer">
           <p className="text-white text-sm sm:text-lg flex items-center gap-3">
             Hubungi Kami
             <ArrowRight className="md:h-6 md:w-6 " />

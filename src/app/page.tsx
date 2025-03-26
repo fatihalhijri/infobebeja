@@ -9,6 +9,8 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Image from "next/image";
 import ProductCard from "@/components/helper/Produk";
+import ParallaxSection from "@/components/Parallax1";
+import { motion } from "framer-motion";
 
 const products = [
   { img: "/kimia/kimia-1.jpg", title: "Bahan Bahan Kimia" },
@@ -39,46 +41,56 @@ const page = () => {
   return (
     <div>
       <Hero />
-      <div className="lg:py-10 py-10 px-6 md:px-20 lg:px-36 relative">
-        <section
-          className="w-full xl:max-w-5xl lg:max-w-3xl lg:bg-white lg:shadow-xl rounded-xl py-8 md:px-6 mx-auto 
+      {/* <ParallaxSection/> */}
+      <motion.div
+        className=""
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        <div className="lg:py-10 py-10 px-6 md:px-20 lg:px-36 relative">
+          <section
+            className="w-full xl:max-w-5xl lg:max-w-3xl lg:bg-white lg:shadow-xl rounded-xl py-8 md:px-6 mx-auto 
           lg:absolute lg:-bottom-10 lg:left-1/2 lg:transform lg:-translate-x-1/2"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-            {/* Item 1 */}
-            <div className="flex flex-col items-center bg-white shadow-md lg:bg-none lg:shadow-none py-5 lg:py-0 px-5 lg:px-none rounded-2xl md:border-r-2 md:border-l-2 lg:border-gray-300 border-gray-200 ">
-              <TestTube className="h-12 w-12 text-blue-500 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-800">
-                Laboratory Chemicals
-              </h3>
-              <p className="text-gray-600 mt-2 text-sm">
-                Layanan Kimia terbaik untuk kebutuhan Anda.
-              </p>
-            </div>
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+              {/* Item 1 */}
+              <div className="flex flex-col items-center bg-white shadow-md lg:bg-none lg:shadow-none py-5 lg:py-0 px-5 lg:px-none rounded-2xl md:border-r-2 md:border-l-2 lg:border-gray-300 border-gray-200 ">
+                <TestTube className="h-12 w-12 text-blue-500 mb-4" />
+                <h3 className="text-lg font-semibold text-gray-800">
+                  Laboratory Chemicals
+                </h3>
+                <p className="text-gray-600 mt-2 text-sm">
+                  Layanan Kimia terbaik untuk kebutuhan Anda.
+                </p>
+              </div>
 
-            {/* Item 2 */}
-            <div className="flex flex-col items-center bg-white shadow-md lg:bg-none lg:shadow-none py-5 lg:py-0 px-5 lg:px-none rounded-2xl md:border-r-2 md:border-l-2 lg:border-gray-300 border-gray-200  ">
-              <Briefcase className="h-12 w-12 text-blue-500 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-800">
-                Professional Area
-              </h3>
-              <p className="text-gray-600 mt-2 text-sm">
-                Tim ahli dengan pengalaman di berbagai industri.
-              </p>
-            </div>
+              {/* Item 2 */}
+              <div className="flex flex-col items-center bg-white shadow-md lg:bg-none lg:shadow-none py-5 lg:py-0 px-5 lg:px-none rounded-2xl md:border-r-2 md:border-l-2 lg:border-gray-300 border-gray-200  ">
+                <Briefcase className="h-12 w-12 text-blue-500 mb-4" />
+                <h3 className="text-lg font-semibold text-gray-800">
+                  Professional Area
+                </h3>
+                <p className="text-gray-600 mt-2 text-sm">
+                  Tim ahli dengan pengalaman di berbagai industri.
+                </p>
+              </div>
 
-            <div className="flex flex-col items-center bg-white shadow-md lg:bg-none lg:shadow-none py-5 lg:py-0 px-5 lg:px-none rounded-2xl md:border-r-2 md:border-l-2 lg:border-gray-300 border-gray-200  ">
-              <Clock className="h-12 w-12 text-blue-500 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-800">
-                Opening Hours
-              </h3>
-              <p className="text-gray-600 mt-2 text-sm">
-                Senin - Jumat: 08:00 - 18:00, Sabtu: 09:00 - 14:00.
-              </p>
+              <div className="flex flex-col items-center bg-white shadow-md lg:bg-none lg:shadow-none py-5 lg:py-0 px-5 lg:px-none rounded-2xl md:border-r-2 md:border-l-2 lg:border-gray-300 border-gray-200  ">
+                <Clock className="h-12 w-12 text-blue-500 mb-4" />
+                <h3 className="text-lg font-semibold text-gray-800">
+                  Opening Hours
+                </h3>
+                <p className="text-gray-600 mt-2 text-sm">
+                  Senin - Jumat: 08:00 - 18:00, Sabtu: 09:00 - 14:00.
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
-      </div>
+          </section>
+        </div>
+      </motion.div>
       {/* <div className='h-[80vh] bg-red-200'></div> */}
 
       <section className="py-12 px-6 md:px-20 lg:px-36  ">
@@ -138,15 +150,16 @@ const page = () => {
                 </h5>
                 <p className="text-gray-600 mt-2 text-sm">
                   Menyediakan layanan testing kimia yang komprehensif dan akurat
-                  
                 </p>
               </div>
             </div>
 
-            <button className="mt-6 bg-blue-400 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-3">
-              <Link href={"/tentang"}>Lihat Lebih</Link>
-              <ArrowRight className="h-6 w-6 " />
-            </button>
+            <Link href={"/tentang"} className="cursor-pointer">
+              <button className="mt-6 bg-blue-400 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-3 cursor-pointer  ">
+                Lihat Lebih
+                <ArrowRight className="h-6 w-6 " />
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -167,10 +180,12 @@ const page = () => {
               dengan Tingkat kemurnian yang tinggi. Terdiri dari Pro Anylize
               (PA), Analar (AR), Guaranted Reagent (GR) Chemical Pure (CP) dll.
             </p>
-            <button className="mt-6 bg-blue-400 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-3">
-              <Link href={"/tentang"}>Lihat Lainnya</Link>
-              <ArrowRight className="h-6 w-6 " />
-            </button>
+            <Link href={"/produk"} className="cursor-pointer">
+              <button className="mt-6 bg-blue-400 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-3 cursor-pointer">
+                Lihat Lainnya
+                <ArrowRight className="h-6 w-6 " />
+              </button>
+            </Link>
           </div>
 
           <div className="w-full lg:w-1/2 mt-8 lg:mt-0 relative">
@@ -178,47 +193,43 @@ const page = () => {
             <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r lg:from-black/30 from-black/20 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l lg:from-black/30 from-black/20 to-transparent z-10 pointer-events-none"></div>
             <div className="hidden md:block">
-
-            <Carousel
-              showArrows={true} // Tampilkan panah navigasi
-              autoPlay={true} // Auto-looping
-              infiniteLoop={true} // Loop terus-menerus
-              showThumbs={false} // Hilangkan thumbnail kecil
-              showStatus={false} // Hilangkan status jumlah slide
-              interval={3000} // Perpindahan slide setiap 3 detik
-              transitionTime={500} // Animasi perpindahan 0.5 detik
-              centerMode={true} // Mode tengah
-              centerSlidePercentage={50} // Setengah dari layar
-              swipeable={false}
+              <Carousel
+                showArrows={true} // Tampilkan panah navigasi
+                autoPlay={true} // Auto-looping
+                infiniteLoop={true} // Loop terus-menerus
+                showThumbs={false} // Hilangkan thumbnail kecil
+                showStatus={false} // Hilangkan status jumlah slide
+                interval={3000} // Perpindahan slide setiap 3 detik
+                transitionTime={500} // Animasi perpindahan 0.5 detik
+                centerMode={true} // Mode tengah
+                centerSlidePercentage={50} // Setengah dari layar
+                swipeable={false}
               >
-              {products.map((product, index) => (
-                <div key={index} className="px-2 pb-10">
-                  <ProductCard img={product.img} title={product.title} />
-                </div>
-              ))}
-            </Carousel>
-              </div>
+                {products.map((product, index) => (
+                  <div key={index} className="px-2 pb-10">
+                    <ProductCard img={product.img} title={product.title} />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
             <div className="block md:hidden">
-
-            <Carousel
-              showArrows={true} // Tampilkan panah navigasi
-              autoPlay={true} // Auto-looping
-              infiniteLoop={true} // Loop terus-menerus
-              showThumbs={false} // Hilangkan thumbnail kecil
-              showStatus={false} // Hilangkan status jumlah slide
-              interval={3000} // Perpindahan slide setiap 3 detik
-              transitionTime={500} // Animasi perpindahan 0.5 detik
-              centerMode={true} // Mode tengah
-              
-              
+              <Carousel
+                showArrows={true} // Tampilkan panah navigasi
+                autoPlay={true} // Auto-looping
+                infiniteLoop={true} // Loop terus-menerus
+                showThumbs={false} // Hilangkan thumbnail kecil
+                showStatus={false} // Hilangkan status jumlah slide
+                interval={3000} // Perpindahan slide setiap 3 detik
+                transitionTime={500} // Animasi perpindahan 0.5 detik
+                centerMode={true} // Mode tengah
               >
-              {products.map((product, index) => (
-                <div key={index} className="px-2 pb-10">
-                  <ProductCard img={product.img} title={product.title} />
-                </div>
-              ))}
-            </Carousel>
-              </div>
+                {products.map((product, index) => (
+                  <div key={index} className="px-2 pb-10">
+                    <ProductCard img={product.img} title={product.title} />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
           </div>
         </div>
       </section>

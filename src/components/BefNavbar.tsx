@@ -197,7 +197,7 @@ const BefNavbar = () => {
                 href={"/produk"}
                 onClick={() => setIsOpen(false)}
                 className={`navbar__link cursor-pointer relative ${getLinkClass(
-                  "/kategori"
+                  "/produk"
                 )}`}
               >
                 Produk
