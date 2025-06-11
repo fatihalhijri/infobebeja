@@ -277,7 +277,7 @@ const page = () => {
           <div className="text-center mb-10">
             <div className=" flex flex-col items-center justify-center ">
               <h3 className="lg:text-3xl md:text-2xl text-2xl uppercase lg:font-semibold sm:font-medium  ">
-                Kontak
+              Paint/Coating & Service
               </h3>
               <hr className="border text-blue-400 rounded-full w-20 border-dashed " />
             </div>
