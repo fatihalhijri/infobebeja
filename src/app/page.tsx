@@ -84,7 +84,7 @@ const page = () => {
                   Opening Hours
                 </h3>
                 <p className="text-gray-600 mt-2 text-sm">
-                  Senin - Jumat: 08:00 - 18:00, Sabtu: 09:00 - 14:00.p
+                  Senin - Jumat: 08:00 - 18:00, Sabtu: 09:00 - 14:00.
                 </p>
               </div>
             </div>
